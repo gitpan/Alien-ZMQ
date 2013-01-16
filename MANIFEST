@@ -1,0 +1,14 @@
+Build.PL
+Changes
+LICENSE
+MANIFEST
+META.json
+META.yml
+README
+inc/My/Build.pm
+lib/Alien/ZMQ.pm
+perlcritic.rc
+t/00-basic.t
+t/author-critic.t
+t/release-pod-coverage.t
+t/release-pod-syntax.t
