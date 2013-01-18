@@ -1,11 +1,13 @@
 package Alien::ZMQ;
 {
-  $Alien::ZMQ::VERSION = '0.02';
+  $Alien::ZMQ::VERSION = '0.03';
 }
 # ABSTRACT: detect and/or install zeromq
 
 use warnings;
 use strict;
+
+use String::ShellQuote qw/shell_quote/;
 
 
 sub inc_version { }
@@ -21,12 +23,12 @@ sub lib_dir { }
 
 
 sub cflags {
-    "-I'" . inc_dir . "'";
+    "-I" . shell_quote(inc_dir);
 }
 
 
 sub libs {
-    "-L'" . lib_dir . "' -lzmq";
+    "-L" . shell_quote(lib_dir) . " -lzmq";
 }
 
 1;
@@ -41,7 +43,7 @@ Alien::ZMQ - detect and/or install zeromq
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -147,7 +149,7 @@ modules, including L<Alien::GMP> and L<Alien::Tidyp>.
 
 =head1 AUTHOR
 
-Charles McGarvey <chazmcgarvey@brokenzipper.com>
+Charles McGarvey <ccm@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

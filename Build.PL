@@ -19,11 +19,11 @@ my $builder = My::Build->new(
     'Digest::SHA' => '0',
     'File::Path' => '0',
     'File::Spec::Functions' => '0',
-    'IPC::Cmd' => '0',
     'LWP::Simple' => '0',
     'Module::Build' => '0.3601'
   },
   'requires' => {
+    'String::ShellQuote' => '0',
     'strict' => '0',
     'warnings' => '0'
   },
@@ -31,7 +31,7 @@ my $builder = My::Build->new(
   'dist_name' => 'Alien-ZMQ',
   'license' => 'perl',
       'dist_author' => [
-    'Charles McGarvey <chazmcgarvey@brokenzipper.com>'
+    'Charles McGarvey <ccm@cpan.org>'
   ],
     dist_version_from => "lib/Alien/ZMQ.pm",
     share_dir => "share",

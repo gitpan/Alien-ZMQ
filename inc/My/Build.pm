@@ -10,7 +10,6 @@ use Cwd qw/realpath/;
 use Digest::SHA qw/sha1_hex/;
 use File::Path qw/remove_tree/;
 use File::Spec::Functions qw/catdir catfile/;
-use IPC::Cmd qw/can_run run/;
 use LWP::Simple qw/getstore RC_OK/;
 use Module::Build;
 
@@ -65,6 +64,7 @@ sub ACTION_code {
 sub probe_zeromq {
     my $self = shift;
     my $cb = $self->cbuilder;
+    my %config = $cb->get_config;
 
     my $src = "test-$$.c";
     open my $SRC, ">$src";
@@ -101,9 +101,9 @@ END
 
         # use -I and -L flag arguments as extra search directories
         my $inc = `$pkg_config $pkg --cflags-only-I`;
-        push @inc_search, map { s/^-I//; $_ } split(/\s+/, $inc);
+        push @inc_search, map { s/^-I//; $_ } $cb->split_like_shell($inc);
         my $lib = `$pkg_config $pkg --libs-only-L`;
-        push @lib_search, map { s/^-L//; $_ } split(/\s+/, $lib);
+        push @lib_search, map { s/^-L//; $_ } $cb->split_like_shell($lib);
 
         last;
     }
@@ -125,13 +125,12 @@ END
     my ($inc_version, $lib_version) = $out =~ /(\d\.\d\.\d) (\d\.\d\.\d)/;
 
     # query the compiler for include and library search paths
-    my $cc = $ENV{CC} || "cc";
     push @lib_search, map {
         my $path = $_;
         $path =~ s/^.+ =?//;
         $path =~ s/\n.*$//;
         -d $path ? realpath($path) : ();
-    } split /:/, `$cc -print-search-dirs`;
+    } split /:/, `$config{cc} -print-search-dirs`;
     push @inc_search, map {
         my $path = $_;
         $path =~ s/lib(32|64)?$/include/;
@@ -140,11 +139,7 @@ END
 
     # search for the header and library files
     my ($inc_dir) = grep { -f catfile($_, "zmq.h") } @inc_search;
-    my ($lib_dir) = grep {
-        -f catfile($_, "libzmq.so")    ||
-        -f catfile($_, "libzmq.dylib") ||
-        -f catfile($_, "libzmq.dll")
-    } @lib_search;
+    my ($lib_dir) = grep { -f catfile($_, $cb->lib_file("libzmq")) } @lib_search;
 
     (
         inc_version => $inc_version,
@@ -157,8 +152,7 @@ END
 
 sub install_zeromq {
     my $self = shift;
-
-    can_run("libtool") or die "The libtool command cannot be found";
+    my $cb = $self->cbuilder;
 
     my $version = $self->notes('zmq-version');
     my $sha1 = $self->notes('zmq-sha1');
@@ -186,16 +180,16 @@ sub install_zeromq {
     my $srcdir  = catdir($basedir, "zeromq-$version");
 
     say "Configuring...";
-    my @config = split(/\s/, $self->args('zmq-config') || "");
+    my @config = $cb->split_like_shell($self->args('zmq-config') || "");
     chdir $srcdir;
-    run(command => ["./configure", "--prefix=$prefix", @config])
+    $cb->do_system("./configure", "--prefix=$prefix", @config)
         or die "Failed to configure ØMQ";
 
     say "Compiling...";
-    run(command => ['make']) or die "Failed to make ØMQ";
+    $cb->do_system("make") or die "Failed to make ØMQ";
 
     say "Installing...";
-    run(command => [qw|make install prefix=/|, "DESTDIR=$datadir"])
+    $cb->do_system(qw|make install prefix=/|, "DESTDIR=$datadir")
         or die "Failed to install ØMQ";
 
     chdir $basedir;

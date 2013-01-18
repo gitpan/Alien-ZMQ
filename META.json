@@ -1,7 +1,7 @@
 {
    "abstract" : "detect and/or install zeromq",
    "author" : [
-      "Charles McGarvey <chazmcgarvey@brokenzipper.com>"
+      "Charles McGarvey <ccm@cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921",
@@ -26,7 +26,6 @@
             "Digest::SHA" : "0",
             "File::Path" : "0",
             "File::Spec::Functions" : "0",
-            "IPC::Cmd" : "0",
             "LWP::Simple" : "0",
             "Module::Build" : "0.3601"
          }
@@ -40,6 +39,7 @@
       },
       "runtime" : {
          "requires" : {
+            "String::ShellQuote" : "0",
             "strict" : "0",
             "warnings" : "0"
          }
@@ -51,6 +51,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.02"
+   "version" : "0.03"
 }
 
