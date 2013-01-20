@@ -26,6 +26,7 @@
             "Digest::SHA" : "0",
             "File::Path" : "0",
             "File::Spec::Functions" : "0",
+            "IPC::Run" : "0",
             "LWP::Simple" : "0",
             "Module::Build" : "0.3601"
          }
@@ -51,6 +52,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.03"
+   "version" : "0.04"
 }
 

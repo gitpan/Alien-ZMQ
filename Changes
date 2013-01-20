@@ -1,6 +1,14 @@
 Revision History for Alien-ZMQ
 ==============================
 
+v0.04 2013-01-19
+----------------
+
+  7837ede fix up documentation and bump version number
+  5aeb13f do not bother building the zeromq test programs
+  989b095 never treat zeromq compiler warnings as fatal
+  18a76a3 run the zeromq configure script through sh explicitly
+
 v0.03 2013-01-17
 ----------------
 

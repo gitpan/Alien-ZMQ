@@ -5,6 +5,8 @@ MANIFEST
 META.json
 META.yml
 README
+examples/Makefile.PL
+files/zeromq-3.2.2-no-tests.patch
 inc/My/Build.pm
 lib/Alien/ZMQ.pm
 perlcritic.rc
