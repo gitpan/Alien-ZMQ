@@ -21,12 +21,7 @@
       },
       "configure" : {
          "requires" : {
-            "Archive::Tar" : "0",
-            "Cwd" : "0",
-            "Digest::SHA" : "0",
             "ExtUtils::CBuilder" : "0.280205",
-            "File::Path" : "0",
-            "File::Spec::Functions" : "0",
             "IPC::Run" : "0",
             "LWP::Simple" : "0",
             "Module::Build" : "0.3601"
@@ -53,6 +48,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.0401"
+   "version" : "0.0402"
 }
 

@@ -1,6 +1,11 @@
 Revision History for Alien-ZMQ
 ==============================
 
+v0.0402 2013-01-21
+------------------
+
+  9d4ada2 require perl 5.10.1 for File::Path::make_path
+
 v0.0401 2013-01-21
 ------------------
 

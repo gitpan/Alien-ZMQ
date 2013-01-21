@@ -1,6 +1,6 @@
 package Alien::ZMQ;
 {
-  $Alien::ZMQ::VERSION = '0.0401';
+  $Alien::ZMQ::VERSION = '0.0402';
 }
 # ABSTRACT: detect and/or install zeromq
 
@@ -43,7 +43,7 @@ Alien::ZMQ - detect and/or install zeromq
 
 =head1 VERSION
 
-version 0.0401
+version 0.0402
 
 =head1 SYNOPSIS
 

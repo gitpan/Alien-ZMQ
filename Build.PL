@@ -1,3 +1,4 @@
+use v5.10.1;
 use warnings FATAL => 'all';
 use strict;
 
@@ -14,12 +15,7 @@ my $builder = My::Build->new(
     'Test::More' => '0'
   },
   'configure_requires' => {
-    'Archive::Tar' => '0',
-    'Cwd' => '0',
-    'Digest::SHA' => '0',
     'ExtUtils::CBuilder' => '0.280205',
-    'File::Path' => '0',
-    'File::Spec::Functions' => '0',
     'IPC::Run' => '0',
     'LWP::Simple' => '0',
     'Module::Build' => '0.3601'
