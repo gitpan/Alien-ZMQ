@@ -17,6 +17,7 @@ my $builder = My::Build->new(
     'Archive::Tar' => '0',
     'Cwd' => '0',
     'Digest::SHA' => '0',
+    'ExtUtils::CBuilder' => '0.280205',
     'File::Path' => '0',
     'File::Spec::Functions' => '0',
     'IPC::Run' => '0',

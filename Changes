@@ -1,6 +1,13 @@
 Revision History for Alien-ZMQ
 ==============================
 
+v0.0401 2013-01-21
+------------------
+
+  db8094c add conditional-eproto patch; bump version number
+  a2fd0c4 require a more recent version of cbuilder
+  f5f2721 fix section references in the documentation
+
 v0.04 2013-01-19
 ----------------
 
