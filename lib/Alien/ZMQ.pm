@@ -1,6 +1,6 @@
 package Alien::ZMQ;
 {
-  $Alien::ZMQ::VERSION = '0.0402';
+  $Alien::ZMQ::VERSION = '0.0403';
 }
 # ABSTRACT: detect and/or install zeromq
 
@@ -43,7 +43,7 @@ Alien::ZMQ - detect and/or install zeromq
 
 =head1 VERSION
 
-version 0.0402
+version 0.0403
 
 =head1 SYNOPSIS
 
@@ -165,7 +165,7 @@ you will also need to reinstall L<Alien::ZMQ>.
 
 =head1 BUGS
 
-Windows is not yet supported.  Patches are welcome.
+MSWin32 is not yet supported, but cygwin works.
 
 =head1 SEE ALSO
 

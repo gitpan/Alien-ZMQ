@@ -16,15 +16,16 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.40"
          }
       },
       "configure" : {
          "requires" : {
+            "Archive::Tar" : "1.00",
             "ExtUtils::CBuilder" : "0.280205",
             "IPC::Run" : "0",
             "LWP::Simple" : "0",
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.40"
          }
       },
       "develop" : {
@@ -48,6 +49,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.0402"
+   "version" : "0.0403"
 }
 

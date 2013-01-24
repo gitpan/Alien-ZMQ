@@ -11,14 +11,15 @@ make_path("share");
 
 my $builder = My::Build->new(
       'build_requires' => {
-    'Module::Build' => '0.3601',
+    'Module::Build' => '0.40',
     'Test::More' => '0'
   },
   'configure_requires' => {
+    'Archive::Tar' => '1.00',
     'ExtUtils::CBuilder' => '0.280205',
     'IPC::Run' => '0',
     'LWP::Simple' => '0',
-    'Module::Build' => '0.3601'
+    'Module::Build' => '0.40'
   },
   'requires' => {
     'String::ShellQuote' => '0',

@@ -1,6 +1,14 @@
 Revision History for Alien-ZMQ
 ==============================
 
+v0.0403 2013-01-23
+------------------
+
+  e4f59b5 mention cygwin in the documentation; bump version number
+  5b1617c require Archive::Tar 1.00 since older versions don't work
+  2b70311 require MB 0.40 to avoid RT#68585
+  78a45fb add example that compiles an executable with cbuilder
+
 v0.0402 2013-01-21
 ------------------
 

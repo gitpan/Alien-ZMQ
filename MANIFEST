@@ -5,6 +5,7 @@ MANIFEST
 META.json
 META.yml
 README
+examples/01-compile.t
 examples/Makefile.PL
 files/zeromq-3.2.2-conditional-eproto.patch
 files/zeromq-3.2.2-no-tests.patch
