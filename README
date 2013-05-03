@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution Alien-ZMQ,
-version 0.0403:
+version 0.05:
 
-  detect and/or install zeromq
+  find and install libzmq, the core zeromq library
 
 This software is copyright (c) 2013 by Charles McGarvey.
 

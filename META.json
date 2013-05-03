@@ -1,10 +1,10 @@
 {
-   "abstract" : "detect and/or install zeromq",
+   "abstract" : "find and install libzmq, the core zeromq library",
    "author" : [
       "Charles McGarvey <ccm@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -49,6 +49,17 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.0403"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/chazmcgarvey/p5-Alien-ZMQ/issues"
+      },
+      "homepage" : "http://search.cpan.org/~ccm/Alien-ZMQ/",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/chazmcgarvey/p5-Alien-ZMQ.git",
+         "web" : "https://github.com/chazmcgarvey/p5-Alien-ZMQ"
+      }
+   },
+   "version" : "0.05"
 }
 

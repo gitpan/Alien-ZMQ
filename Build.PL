@@ -26,7 +26,7 @@ my $builder = My::Build->new(
     'strict' => '0',
     'warnings' => '0'
   },
-      'dist_abstract' => 'detect and/or install zeromq',
+      'dist_abstract' => 'find and install libzmq, the core zeromq library',
   'dist_name' => 'Alien-ZMQ',
   'license' => 'perl',
       'dist_author' => [
@@ -35,7 +35,7 @@ my $builder = My::Build->new(
     dist_version_from => "lib/Alien/ZMQ.pm",
     share_dir => "share",
 );
-$builder->notes('zmq-version', '3.2.2');
-$builder->notes('zmq-sha1', '0e8734c773b6a757b474c16fc3c517993ba47283');
+$builder->notes('zmq-version', '3.2.3');
+$builder->notes('zmq-sha1', '6857a3a0e908eca58f7c0f90e2ba4695f6700957');
 
 $builder->create_build_script;

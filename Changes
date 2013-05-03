@@ -1,6 +1,14 @@
 Revision History for Alien-ZMQ
 ==============================
 
+v0.05 2013-05-02
+----------------
+
+  03cf2eb switch distribution to zeromq-3.2.3; bump version
+  f3a10ea add gitignore file
+  77bb082 cflags and libs can now return a list of flags
+  435ebe1 improve the abstract and add urls to dist metadata
+
 v0.0403 2013-01-23
 ------------------
 
