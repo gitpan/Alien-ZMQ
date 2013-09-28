@@ -1,6 +1,13 @@
 Revision History for Alien-ZMQ
 ==============================
 
+v0.06 2013-09-28
+----------------
+
+  232c208 switch distribution to zeromq-3.2.4
+  cbcb271 do not print Ø for the benefit of unicode-unaware terminals
+  8539173 remove use of `say' to support older perls
+
 v0.05 2013-05-02
 ----------------
 

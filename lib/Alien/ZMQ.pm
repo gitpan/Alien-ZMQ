@@ -1,6 +1,6 @@
 package Alien::ZMQ;
 {
-  $Alien::ZMQ::VERSION = '0.05';
+  $Alien::ZMQ::VERSION = '0.06';
 }
 # ABSTRACT: find and install libzmq, the core zeromq library
 
@@ -51,7 +51,7 @@ Alien::ZMQ - find and install libzmq, the core zeromq library
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -66,7 +66,7 @@ version 0.05
 =head1 DESCRIPTION
 
 Upon installation, the target system is probed for the presence of libzmq.  If
-it is not found, B<libzmq 3.2.3> is installed in a shared directory.  In
+it is not found, B<libzmq 3.2.4> is installed in a shared directory.  In
 short, modules that need libzmq can depend on this module to make sure that it
 is available, or use it independently as a way to install zeromq.
 
